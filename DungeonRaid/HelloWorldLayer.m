@@ -22,6 +22,8 @@
 
 - (id)init {
     if ((self = [super init])) {
+        self.isTouchEnabled = YES;
+
         KKTile *kkTile = [KKTile tileWithType:coin];
         CGSize tileSize = kkTile.sprite.textureRect.size;
         for (int i = 0; i < 6; i++) {
