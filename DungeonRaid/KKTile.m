@@ -50,4 +50,8 @@
     return fileName;
 }
 
+- (BOOL)containPoint:(CGPoint)p {
+    return CGRectContainsPoint(self.textureRect, p);
+}
+
 @end
