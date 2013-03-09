@@ -10,6 +10,11 @@
 #import "HelloWorldLayer.h"
 #import "KKTile.h"
 
+@interface HelloWorldLayer ()
+@property(nonatomic, retain) CCArray *tileArray;
+
+@end
+
 @implementation HelloWorldLayer
 
 + (CCScene *)scene {
@@ -24,6 +29,7 @@
     if ((self = [super init])) {
         self.isTouchEnabled = YES;
 
+        self.tileArray = [CCArray array];
         KKTile *kkTile = [KKTile tileWithType:coin];
         CGSize tileSize = kkTile.sprite.textureRect.size;
         for (int i = 0; i < 6; i++) {
@@ -32,6 +38,7 @@
                 KKTile *t = [KKTile tileWithType:type];
                 t.position = ccp(tileSize.width / 2 + tileSize.width * i, tileSize.height / 2 + tileSize.height * j);
                 [self addChild:t];
+                [self.tileArray addObject:t];
             }
         }
     }
