@@ -45,4 +45,39 @@
     return self;
 }
 
+- (void)ccTouchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    UITouch *touch = [touches anyObject];
+    CGPoint touchPos = [self convertTouchToNodeSpace:touch];
+
+    for (KKTile *tile in self.tileArray) {
+        NSAssert([tile isKindOfClass:[KKTile class]], @"self.tileArrayにはKKTileしか入れない");
+        if ([tile containPoint:touchPos]) {
+            tile.visible = NO;
+        }
+    }
+}
+
+- (void)ccTouchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
+    UITouch *touch = [touches anyObject];
+    CGPoint touchPos = [self convertTouchToNodeSpace:touch];
+
+    for (KKTile *tile in self.tileArray) {
+        NSAssert([tile isKindOfClass:[KKTile class]], @"self.tileArrayにはKKTileしか入れない");
+        if ([tile containPoint:touchPos]) {
+            tile.visible = NO;
+        }
+    }
+}
+
+- (void)ccTouchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+    UITouch *touch = [touches anyObject];
+    CGPoint touchPos = [self convertTouchToNodeSpace:touch];
+
+    for (KKTile *tile in self.tileArray) {
+        NSAssert([tile isKindOfClass:[KKTile class]], @"self.tileArrayにはKKTileしか入れない");
+        tile.visible = YES;
+    }
+}
+
+
 @end

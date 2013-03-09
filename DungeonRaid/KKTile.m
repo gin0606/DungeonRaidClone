@@ -51,7 +51,7 @@
 }
 
 - (BOOL)containPoint:(CGPoint)p {
-    return CGRectContainsPoint(self.textureRect, p);
+    return CGRectContainsPoint(self.boundingBox, p);
 }
 
 @end
