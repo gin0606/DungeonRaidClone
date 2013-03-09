@@ -42,8 +42,8 @@
                 NSAssert(NO, @"このTileTypeはまだ実装されてない");
                 break;
         }
-        CCSprite *sprite = [CCSprite spriteWithFile:fileName];
-        [self addChild:sprite];
+        self.sprite = [CCSprite spriteWithFile:fileName];
+        [self addChild:self.sprite];
     }
     return self;
 }

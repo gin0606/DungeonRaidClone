@@ -22,5 +22,6 @@ typedef enum {
 
 - (id)initWithType:(TileType)type;
 
+@property(nonatomic, retain) CCSprite *sprite;
 @property(nonatomic) TileType type;
 @end
