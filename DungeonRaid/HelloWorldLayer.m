@@ -31,7 +31,7 @@
 
         self.tileArray = [CCArray array];
         KKTile *kkTile = [KKTile tileWithType:coin];
-        CGSize tileSize = kkTile.sprite.textureRect.size;
+        CGSize tileSize = kkTile.textureRect.size;
         for (int i = 0; i < 6; i++) {
             for (int j = 0; j < 6; j++) {
                 TileType type = (int) (CCRANDOM_0_1() * 1000) % TileType_MAX;

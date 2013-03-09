@@ -16,12 +16,11 @@ typedef enum {
     TileType_MAX,
 } TileType;
 
-@interface KKTile : CCNode
+@interface KKTile : CCSprite
 
 + (id)tileWithType:(TileType)type;
 
 - (id)initWithType:(TileType)type;
 
-@property(nonatomic, retain) CCSprite *sprite;
 @property(nonatomic) TileType type;
 @end

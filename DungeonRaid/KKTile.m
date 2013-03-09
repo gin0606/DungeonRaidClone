@@ -17,35 +17,37 @@
 }
 
 - (id)initWithType:(TileType)type {
-    self = [super init];
+    NSString *fileName = [KKTile fileNameWithType:type];
+    self = [super initWithFile:fileName];
     if (self) {
         _type = type;
-
-        NSString *fileName = nil;
-        switch (self.type) {
-            case coin:
-                fileName = @"coin.png";
-                break;
-            case enemy:
-                fileName = @"enemy.png";
-                break;
-            case potion:
-                fileName = @"potion.png";
-                break;
-            case shield:
-                fileName = @"shield.png";
-                break;
-            case sword:
-                fileName = @"sword.png";
-                break;
-            case TileType_MAX:
-                NSAssert(NO, @"このTileTypeはまだ実装されてない");
-                break;
-        }
-        self.sprite = [CCSprite spriteWithFile:fileName];
-        [self addChild:self.sprite];
     }
     return self;
+}
+
++ (NSString *)fileNameWithType:(TileType)type {
+    NSString *fileName = nil;
+    switch (type) {
+        case coin:
+            fileName = @"coin.png";
+            break;
+        case enemy:
+            fileName = @"enemy.png";
+            break;
+        case potion:
+            fileName = @"potion.png";
+            break;
+        case shield:
+            fileName = @"shield.png";
+            break;
+        case sword:
+            fileName = @"sword.png";
+            break;
+        case TileType_MAX:
+            NSAssert(NO, @"このTileTypeはまだ実装されてない");
+            break;
+    }
+    return fileName;
 }
 
 @end
