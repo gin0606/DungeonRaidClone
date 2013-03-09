@@ -7,20 +7,20 @@
 
 #import <Foundation/Foundation.h>
 
-//typedef enum {
-//    coin,
-//    enemy,
-//    potion,
-//    shield,
-//    sword,
-//    TileType_MAX,
-//} TileType;
+typedef enum {
+    coin,
+    enemy,
+    potion,
+    shield,
+    sword,
+    TileType_MAX,
+} TileType;
 
 @interface KKTile : CCNode
 
-//+ (id)tileWithType:(TileType)type;
-//
-//- (id)initWithType:(TileType)type;
-//
-//@property(nonatomic) TileType type;
++ (id)tileWithType:(TileType)type;
+
+- (id)initWithType:(TileType)type;
+
+@property(nonatomic) TileType type;
 @end
