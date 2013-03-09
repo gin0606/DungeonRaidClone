@@ -8,5 +8,5 @@
 #import <Foundation/Foundation.h>
 
 
-@interface PuzzleLayer : CCLayer 
+@interface PuzzleLayer : CCLayer
 @end

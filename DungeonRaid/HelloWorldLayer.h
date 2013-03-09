@@ -8,10 +8,9 @@
 
 
 // HelloWorldLayer
-@interface HelloWorldLayer : CCLayer
-{
+@interface HelloWorldLayer : CCLayer {
 }
 
-+(CCScene *) scene;
++ (CCScene *)scene;
 
 @end
