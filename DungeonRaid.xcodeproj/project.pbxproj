@@ -79,7 +79,7 @@
 		ACC1D91AEEC762A8961CB680 /* CCShaderCache.m in Sources */ = {isa = PBXBuildFile; fileRef = ACC1D1379B5B6B0E41059ED7 /* CCShaderCache.m */; };
 		ACC1D94590DC667535DF52D8 /* CCAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = ACC1DC5A278B25052647BCD2 /* CCAnimation.m */; };
 		ACC1D956F8184D8CBCBE8AB1 /* CCMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = ACC1D10F0808783AD0B460EA /* CCMenu.m */; };
-		ACC1D9745CDEA2AEB06E31F9 /* Tile.m in Sources */ = {isa = PBXBuildFile; fileRef = ACC1D4F9E083DE6DEC478321 /* Tile.m */; };
+		ACC1D9745CDEA2AEB06E31F9 /* KKTile.m in Sources */ = {isa = PBXBuildFile; fileRef = ACC1D4F9E083DE6DEC478321 /* KKTile.m */; };
 		ACC1D98406AF52FE216AB312 /* CCArray.m in Sources */ = {isa = PBXBuildFile; fileRef = ACC1D330C121736DA3781F04 /* CCArray.m */; };
 		ACC1D9910D042FFB36D9A728 /* CCCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = ACC1D41C36406FAED3DF08B9 /* CCCamera.m */; };
 		ACC1D99FC187614CA83875CD /* fps_images.png in Resources */ = {isa = PBXBuildFile; fileRef = ACC1D4A52810F4E603A4A6B7 /* fps_images.png */; };
@@ -235,7 +235,7 @@
 		ACC1D491990DABECBE2C181C /* ccShader_Position_uColor_vert.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ccShader_Position_uColor_vert.h; path = libs/cocos2d/ccShader_Position_uColor_vert.h; sourceTree = "<group>"; };
 		ACC1D4A52810F4E603A4A6B7 /* fps_images.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fps_images.png; path = Resources/fps_images.png; sourceTree = "<group>"; };
 		ACC1D4F491E30ACA53F2F7BC /* vec2.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = vec2.c; path = libs/kazmath/src/vec2.c; sourceTree = "<group>"; };
-		ACC1D4F9E083DE6DEC478321 /* Tile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tile.m; sourceTree = "<group>"; };
+		ACC1D4F9E083DE6DEC478321 /* KKTile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKTile.m; sourceTree = "<group>"; };
 		ACC1D510B132D5E032E1EACB /* ccShader_Position_uColor_frag.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ccShader_Position_uColor_frag.h; path = libs/cocos2d/ccShader_Position_uColor_frag.h; sourceTree = "<group>"; };
 		ACC1D524620538D44F0CB764 /* ZipUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ZipUtils.m; path = libs/cocos2d/Support/ZipUtils.m; sourceTree = "<group>"; };
 		ACC1D5459D4A95E9206B4983 /* CCTMXObjectGroup.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CCTMXObjectGroup.h; path = libs/cocos2d/CCTMXObjectGroup.h; sourceTree = "<group>"; };
@@ -382,7 +382,7 @@
 		ACC1DE11015740AE1260FF20 /* CCTouchDispatcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CCTouchDispatcher.h; path = libs/cocos2d/Platforms/iOS/CCTouchDispatcher.h; sourceTree = "<group>"; };
 		ACC1DE125BEC1F1F06AD3259 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "Resources/Icon@2x.png"; sourceTree = "<group>"; };
 		ACC1DE1F7E58D92E4A27E15C /* cocos2d.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = cocos2d.h; path = libs/cocos2d/cocos2d.h; sourceTree = "<group>"; };
-		ACC1DE28ED078CD6BBDFECC1 /* Tile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tile.h; sourceTree = "<group>"; };
+		ACC1DE28ED078CD6BBDFECC1 /* KKTile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKTile.h; sourceTree = "<group>"; };
 		ACC1DE34778A0A20715BFC0E /* CCEventDispatcher.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CCEventDispatcher.m; path = libs/cocos2d/Platforms/Mac/CCEventDispatcher.m; sourceTree = "<group>"; };
 		ACC1DE3EB8100EFCC14A497A /* CCVertex.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CCVertex.h; path = libs/cocos2d/Support/CCVertex.h; sourceTree = "<group>"; };
 		ACC1DE565146BF8BB9111367 /* CCGrid.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CCGrid.m; path = libs/cocos2d/CCGrid.m; sourceTree = "<group>"; };
@@ -728,8 +728,8 @@
 				ACC1DCECA1895C60080AED0F /* IntroLayer.m */,
 				ACC1D604C6A463678C2E1455 /* PuzzleLayer.m */,
 				ACC1D0F89179EEBC8DDD371A /* PuzzleLayer.h */,
-				ACC1D4F9E083DE6DEC478321 /* Tile.m */,
-				ACC1DE28ED078CD6BBDFECC1 /* Tile.h */,
+				ACC1D4F9E083DE6DEC478321 /* KKTile.m */,
+				ACC1DE28ED078CD6BBDFECC1 /* KKTile.h */,
 			);
 			path = DungeonRaid;
 			sourceTree = "<group>";
@@ -1045,7 +1045,7 @@
 				ACC1DAF1DBEF0C3EB2825E65 /* HelloWorldLayer.m in Sources */,
 				ACC1D66D51CD253377CCC463 /* IntroLayer.m in Sources */,
 				ACC1DC6433823AE5F84BF1B6 /* PuzzleLayer.m in Sources */,
-				ACC1D9745CDEA2AEB06E31F9 /* Tile.m in Sources */,
+				ACC1D9745CDEA2AEB06E31F9 /* KKTile.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
