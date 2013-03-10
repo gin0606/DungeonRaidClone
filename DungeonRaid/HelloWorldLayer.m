@@ -36,8 +36,6 @@
         self.touchTiles = [CCArray array];
         self.touchedTileType = TileType_MAX;
 
-        KKTile *kkTile = [KKTile tileWithType:coin];
-        CGSize tileSize = kkTile.textureRect.size;
         for (int i = 0; i < TILE_NUM; i++) {
             for (int j = 0; j < TILE_NUM; j++) {
                 TileType type = (int) (CCRANDOM_0_1() * 1000) % TileType_MAX;
@@ -87,9 +85,6 @@
 }
 
 - (void)ccTouchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
-    UITouch *touch = [touches anyObject];
-    CGPoint touchPos = [self convertTouchToNodeSpace:touch];
-
     for (KKTile *tile in self.touchTiles) {
         mass[tile.massX][tile.massY] = nil;
         [self removeChild:tile cleanup:YES];
