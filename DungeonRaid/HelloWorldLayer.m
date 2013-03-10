@@ -13,7 +13,7 @@
 #define TILE_NUM 6
 
 @interface HelloWorldLayer () {
-    KKTile *mass[TILE_NUM][TILE_NUM];
+    KKTile *mass[TILE_NUM][TILE_NUM* 2];
 }
 @property(nonatomic, retain) CCArray *touchTiles;
 @property(nonatomic) TileType touchedTileType;
@@ -37,7 +37,7 @@
         self.touchedTileType = TileType_MAX;
 
         for (int i = 0; i < TILE_NUM; i++) {
-            for (int j = 0; j < TILE_NUM; j++) {
+            for (int j = 0; j < TILE_NUM * 2; j++) {
                 TileType type = (int) (CCRANDOM_0_1() * 1000) % TileType_MAX;
                 KKTile *t = [KKTile tileWithType:type];
                 t.massX = i;
@@ -55,7 +55,7 @@
     CGPoint touchPos = [self convertTouchToNodeSpace:touch];
 
     for (int i = 0; i < TILE_NUM; i++) {
-        for (int j = 0; j < TILE_NUM; j++) {
+        for (int j = 0; j < TILE_NUM * 2; j++) {
             KKTile *tile = mass[i][j];
             if (CGRectContainsPoint([tile boundingBox], touchPos)) {
                 tile.opacity = 128;
@@ -72,7 +72,7 @@
     CGPoint touchPos = [self convertTouchToNodeSpace:touch];
 
     for (int i = 0; i < TILE_NUM; i++) {
-        for (int j = 0; j < TILE_NUM; j++) {
+        for (int j = 0; j < TILE_NUM * 2; j++) {
             KKTile *tile = mass[i][j];
             if (tile.type == self.touchedTileType
                     && ccpFuzzyEqual(tile.position, touchPos, tile.contentSize.height / 3)) {
@@ -93,7 +93,7 @@
     self.touchedTileType = TileType_MAX;
 
     for (int i = 0; i < TILE_NUM; i++) {
-        for (int j = 1; j < TILE_NUM; j++) {
+        for (int j = 0; j < TILE_NUM * 2; j++) {
             if (mass[i][j]) {
                 int y;
                 for (y = 1; y < TILE_NUM && y <= j && !mass[i][j - y]; y++) {
@@ -110,7 +110,7 @@
     }
 
     for (int i = 0; i < TILE_NUM; i++) {
-        for (int j = 1; j < TILE_NUM; j++) {
+        for (int j = 0; j < TILE_NUM * 2; j++) {
             if (!mass[i][j]) {
                 TileType type = (int) (CCRANDOM_0_1() * 1000) % TileType_MAX;
                 KKTile *t = [KKTile tileWithType:type];
