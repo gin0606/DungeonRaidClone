@@ -10,6 +10,8 @@
 #import "HelloWorldLayer.h"
 #import "KKTile.h"
 
+#define TILE_NUM 6
+
 @interface HelloWorldLayer ()
 @property(nonatomic, retain) CCArray *tileArray;
 @property(nonatomic, retain) CCArray *touchTiles;
@@ -36,8 +38,8 @@
         self.tileArray = [CCArray array];
         KKTile *kkTile = [KKTile tileWithType:coin];
         CGSize tileSize = kkTile.textureRect.size;
-        for (int i = 0; i < 6; i++) {
-            for (int j = 0; j < 6; j++) {
+        for (int i = 0; i < TILE_NUM; i++) {
+            for (int j = 0; j < TILE_NUM; j++) {
                 TileType type = (int) (CCRANDOM_0_1() * 1000) % TileType_MAX;
                 KKTile *t = [KKTile tileWithType:type];
                 t.position = ccp(tileSize.width / 2 + tileSize.width * i, tileSize.height / 2 + tileSize.height * j);
