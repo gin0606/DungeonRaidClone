@@ -22,8 +22,5 @@ typedef enum {
 
 - (id)initWithType:(TileType)type;
 
-- (BOOL)containPoint:(CGPoint)p;
-
-
 @property(nonatomic) TileType type;
 @end

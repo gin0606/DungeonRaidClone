@@ -50,8 +50,4 @@
     return fileName;
 }
 
-- (BOOL)containPoint:(CGPoint)p {
-    return CGRectContainsPoint(self.boundingBox, p);
-}
-
 @end
