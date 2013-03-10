@@ -50,4 +50,16 @@
     return fileName;
 }
 
+- (void)setMassX:(int)massX {
+    _massX = massX;
+    CGSize s = self.contentSize;
+    self.position = ccp(s.width * 0.5f + s.width * _massX, self.position.y);
+}
+
+- (void)setMassY:(int)massY {
+    _massY = massY;
+    CGSize s = self.contentSize;
+    self.position = ccp(self.position.x, s.height * 0.5f + s.height * _massY);
+}
+
 @end

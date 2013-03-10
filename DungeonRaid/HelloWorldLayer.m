@@ -42,7 +42,6 @@
             for (int j = 0; j < TILE_NUM; j++) {
                 TileType type = (int) (CCRANDOM_0_1() * 1000) % TileType_MAX;
                 KKTile *t = [KKTile tileWithType:type];
-                t.position = ccp(tileSize.width / 2 + tileSize.width * i, tileSize.height / 2 + tileSize.height * j);
                 t.massX = i;
                 t.massY = j;
                 [self addChild:t];
