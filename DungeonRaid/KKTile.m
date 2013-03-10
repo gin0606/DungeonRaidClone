@@ -51,12 +51,14 @@
 }
 
 - (void)setMassX:(int)massX {
+    NSAssert(massX >= 0, @"arg : %d, posX : %d, posY : %d", massX, self.massX,self.massY);
     _massX = massX;
     CGSize s = self.contentSize;
     self.position = ccp(s.width * 0.5f + s.width * _massX, self.position.y);
 }
 
 - (void)setMassY:(int)massY {
+    NSAssert(massY >= 0, @"arg : %d, posX : %d, posY : %d", massY, self.massX,self.massY);
     _massY = massY;
     CGSize s = self.contentSize;
     self.position = ccp(self.position.x, s.height * 0.5f + s.height * _massY);

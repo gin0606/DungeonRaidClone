@@ -99,16 +99,18 @@
 
     for (int i = 0; i < TILE_NUM; i++) {
         for (int j = 1; j < TILE_NUM; j++) {
-            int y;
-            for (y = 1; y < TILE_NUM && !mass[i][j - y]; y++) {
-                while (0) {};
+            if (mass[i][j]) {
+                int y;
+                for (y = 1; y < TILE_NUM && y <= j && !mass[i][j - y]; y++) {
+                    while (0) {/* 最適化で消されないように */}
+                }
+
+                y--;
+                KKTile *tile = mass[i][j];
+                mass[i][j] = nil;
+                mass[i][j - y] = tile;
+                tile.massY -= y;
             }
-            y--;
-            CCLOG(@"%d", y);
-            KKTile *tile = mass[i][j];
-            mass[i][j] = nil;
-            mass[i][j - y] = tile;
-            tile.massY -= y;
         }
     }
 }
