@@ -51,7 +51,7 @@
 
     for (KKTile *tile in self.tileArray) {
         NSAssert([tile isKindOfClass:[KKTile class]], @"self.tileArrayにはKKTileしか入れない");
-        if ([tile containPoint:touchPos]) {
+        if (CGRectContainsPoint([tile boundingBox], touchPos)) {
             tile.visible = NO;
         }
     }
@@ -63,7 +63,7 @@
 
     for (KKTile *tile in self.tileArray) {
         NSAssert([tile isKindOfClass:[KKTile class]], @"self.tileArrayにはKKTileしか入れない");
-        if ([tile containPoint:touchPos]) {
+        if (ccpFuzzyEqual(tile.position, touchPos, tile.contentSize.height / 3)) {
             tile.visible = NO;
         }
     }
