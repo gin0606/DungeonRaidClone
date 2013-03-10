@@ -23,4 +23,7 @@ typedef enum {
 - (id)initWithType:(TileType)type;
 
 @property(nonatomic) TileType type;
+@property(nonatomic) int massX;
+@property(nonatomic) int massY;
+
 @end
