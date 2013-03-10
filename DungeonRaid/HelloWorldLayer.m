@@ -108,5 +108,18 @@
             }
         }
     }
+
+    for (int i = 0; i < TILE_NUM; i++) {
+        for (int j = 1; j < TILE_NUM; j++) {
+            if (!mass[i][j]) {
+                TileType type = (int) (CCRANDOM_0_1() * 1000) % TileType_MAX;
+                KKTile *t = [KKTile tileWithType:type];
+                t.massX = i;
+                t.massY = j;
+                [self addChild:t];
+                mass[i][j] = t;
+            }
+        }
+    }
 }
 @end
