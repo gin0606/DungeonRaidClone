@@ -10,10 +10,12 @@
 #import "HelloWorldLayer.h"
 #import "KKTile.h"
 
-#define TILE_NUM 6
+#define TILE_NUM_X 6
+#define TILE_NUM_Y TILE_NUM_X * 2
+
 
 @interface HelloWorldLayer () {
-    KKTile *mass[TILE_NUM][TILE_NUM* 2];
+    KKTile *mass[TILE_NUM_X][TILE_NUM_Y];
 }
 @property(nonatomic, retain) CCArray *touchTiles;
 @property(nonatomic) TileType touchedTileType;
@@ -36,8 +38,8 @@
         self.touchTiles = [CCArray array];
         self.touchedTileType = TileType_MAX;
 
-        for (int i = 0; i < TILE_NUM; i++) {
-            for (int j = 0; j < TILE_NUM * 2; j++) {
+        for (int i = 0; i < TILE_NUM_X; i++) {
+            for (int j = 0; j < TILE_NUM_Y; j++) {
                 TileType type = (int) (CCRANDOM_0_1() * 1000) % TileType_MAX;
                 KKTile *t = [KKTile tileWithType:type];
                 t.massX = i;
@@ -54,8 +56,8 @@
     UITouch *touch = [touches anyObject];
     CGPoint touchPos = [self convertTouchToNodeSpace:touch];
 
-    for (int i = 0; i < TILE_NUM; i++) {
-        for (int j = 0; j < TILE_NUM * 2; j++) {
+    for (int i = 0; i < TILE_NUM_X; i++) {
+        for (int j = 0; j < TILE_NUM_Y; j++) {
             KKTile *tile = mass[i][j];
             if (CGRectContainsPoint([tile boundingBox], touchPos)) {
                 tile.opacity = 128;
@@ -71,8 +73,8 @@
     UITouch *touch = [touches anyObject];
     CGPoint touchPos = [self convertTouchToNodeSpace:touch];
 
-    for (int i = 0; i < TILE_NUM; i++) {
-        for (int j = 0; j < TILE_NUM * 2; j++) {
+    for (int i = 0; i < TILE_NUM_X; i++) {
+        for (int j = 0; j < TILE_NUM_Y; j++) {
             KKTile *tile = mass[i][j];
             if (tile.type == self.touchedTileType
                     && ccpFuzzyEqual(tile.position, touchPos, tile.contentSize.height / 3)) {
@@ -92,11 +94,11 @@
     [self.touchTiles removeAllObjects];
     self.touchedTileType = TileType_MAX;
 
-    for (int i = 0; i < TILE_NUM; i++) {
-        for (int j = 0; j < TILE_NUM * 2; j++) {
+    for (int i = 0; i < TILE_NUM_X; i++) {
+        for (int j = 0; j < TILE_NUM_Y; j++) {
             if (mass[i][j]) {
                 int y;
-                for (y = 1; y < TILE_NUM && y <= j && !mass[i][j - y]; y++) {
+                for (y = 1; y < TILE_NUM_X && y <= j && !mass[i][j - y]; y++) {
                     while (0) {/* 最適化で消されないように */}
                 }
 
@@ -109,8 +111,8 @@
         }
     }
 
-    for (int i = 0; i < TILE_NUM; i++) {
-        for (int j = 0; j < TILE_NUM * 2; j++) {
+    for (int i = 0; i < TILE_NUM_X; i++) {
+        for (int j = 0; j < TILE_NUM_Y; j++) {
             if (!mass[i][j]) {
                 TileType type = (int) (CCRANDOM_0_1() * 1000) % TileType_MAX;
                 KKTile *t = [KKTile tileWithType:type];
