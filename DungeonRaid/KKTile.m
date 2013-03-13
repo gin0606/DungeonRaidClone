@@ -12,11 +12,11 @@
 
 }
 
-+ (id)tileWithType:(TileType)type {
++ (id)tileWithType:(KKTileType)type {
     return [[[self alloc] initWithType:type] autorelease];
 }
 
-- (id)initWithType:(TileType)type {
+- (id)initWithType:(KKTileType)type {
     NSString *fileName = [KKTile fileNameWithType:type];
     self = [super initWithFile:fileName];
     if (self) {
@@ -25,7 +25,7 @@
     return self;
 }
 
-+ (NSString *)fileNameWithType:(TileType)type {
++ (NSString *)fileNameWithType:(KKTileType)type {
     NSString *fileName = nil;
     switch (type) {
         case coin:

@@ -14,15 +14,15 @@ typedef enum {
     shield,
     sword,
     TileType_MAX,
-} TileType;
+} KKTileType;
 
 @interface KKTile : CCSprite
 
-+ (id)tileWithType:(TileType)type;
++ (id)tileWithType:(KKTileType)type;
 
-- (id)initWithType:(TileType)type;
+- (id)initWithType:(KKTileType)type;
 
-@property(nonatomic) TileType type;
+@property(nonatomic) KKTileType type;
 @property(nonatomic) int massX;
 @property(nonatomic) int massY;
 

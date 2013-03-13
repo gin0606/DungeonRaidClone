@@ -18,7 +18,7 @@
     KKTile *mass[TILE_NUM_X][TILE_NUM_Y];
 }
 @property(nonatomic, retain) CCArray *touchTiles;
-@property(nonatomic) TileType touchedTileType;
+@property(nonatomic) KKTileType touchedTileType;
 
 @end
 
@@ -40,7 +40,7 @@
 
         for (int i = 0; i < TILE_NUM_X; i++) {
             for (int j = 0; j < TILE_NUM_Y; j++) {
-                TileType type = (int) (CCRANDOM_0_1() * 1000) % TileType_MAX;
+                KKTileType type = (int) (CCRANDOM_0_1() * 1000) % TileType_MAX;
                 KKTile *t = [KKTile tileWithType:type];
                 t.massX = i;
                 t.massY = j;
@@ -122,7 +122,7 @@
     for (int i = 0; i < TILE_NUM_X; i++) {
         for (int j = 0; j < TILE_NUM_Y; j++) {
             if (!mass[i][j]) {
-                TileType type = (int) (CCRANDOM_0_1() * 1000) % TileType_MAX;
+                KKTileType type = (int) (CCRANDOM_0_1() * 1000) % TileType_MAX;
                 KKTile *t = [KKTile tileWithType:type];
                 t.massX = i;
                 t.massY = j;
