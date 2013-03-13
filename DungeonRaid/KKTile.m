@@ -28,19 +28,19 @@
 + (NSString *)fileNameWithType:(KKTileType)type {
     NSString *fileName = nil;
     switch (type) {
-        case coin:
+        case KKCoinTile:
             fileName = @"coin.png";
             break;
-        case enemy:
+        case KKEnemyTile:
             fileName = @"enemy.png";
             break;
-        case potion:
+        case KKPotionTile:
             fileName = @"potion.png";
             break;
-        case shield:
+        case KKShieldTile:
             fileName = @"shield.png";
             break;
-        case sword:
+        case KKSwordTile:
             fileName = @"sword.png";
             break;
         case TileType_MAX:

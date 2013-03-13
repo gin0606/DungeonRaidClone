@@ -53,8 +53,8 @@
 }
 
 - (BOOL)canTouchTile:(KKTile *)tile {
-    if (self.touchedTileType == enemy || self.touchedTileType == sword) {
-        return tile.type == enemy || tile.type == sword;
+    if (self.touchedTileType == KKEnemyTile || self.touchedTileType == KKSwordTile) {
+        return tile.type == KKEnemyTile || tile.type == KKSwordTile;
     } else {
         return self.touchedTileType == tile.type;
     }

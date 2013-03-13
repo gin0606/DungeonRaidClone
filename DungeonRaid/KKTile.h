@@ -8,11 +8,11 @@
 #import <Foundation/Foundation.h>
 
 typedef enum {
-    coin,
-    enemy,
-    potion,
-    shield,
-    sword,
+    KKCoinTile,
+    KKEnemyTile,
+    KKPotionTile,
+    KKShieldTile,
+    KKSwordTile,
     TileType_MAX,
 } KKTileType;
 
