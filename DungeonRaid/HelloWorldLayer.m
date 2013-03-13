@@ -52,6 +52,14 @@
     return self;
 }
 
+- (BOOL)canTouchTile:(KKTile *)tile {
+    if (self.touchedTileType == enemy || self.touchedTileType == sword) {
+        return tile.type == enemy || tile.type == sword;
+    } else {
+        return self.touchedTileType == tile.type;
+    }
+}
+
 - (void)ccTouchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     UITouch *touch = [touches anyObject];
     CGPoint touchPos = [self convertTouchToNodeSpace:touch];
@@ -76,7 +84,7 @@
     for (int i = 0; i < TILE_NUM_X; i++) {
         for (int j = 0; j < TILE_NUM_Y; j++) {
             KKTile *tile = mass[i][j];
-            if (tile.type == self.touchedTileType
+            if ([self canTouchTile:tile]
                     && ccpFuzzyEqual(tile.position, touchPos, tile.contentSize.height / 3)) {
                 tile.opacity = 128;
                 [self.touchTiles addObject:tile];
