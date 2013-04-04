@@ -10,4 +10,7 @@
 
 
 @interface KKEnemyTile : KKTile 
+@property(nonatomic) NSInteger attack;
+@property(nonatomic) NSInteger defence;
+@property(nonatomic) NSInteger health;
 @end
