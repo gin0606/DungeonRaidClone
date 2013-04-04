@@ -41,7 +41,7 @@
         for (int i = 0; i < TILE_NUM_X; i++) {
             for (int j = 0; j < TILE_NUM_Y; j++) {
                 KKTileType type = (KKTileType) ((int) (CCRANDOM_0_1() * 1000) % TileTypeType_MAX);
-                KKTile *t = [KKTile tileWithType:type];
+                KKTile *t = [self createTileWithType:type];
                 t.massX = i;
                 t.massY = j;
                 [self addChild:t];
@@ -50,6 +50,31 @@
         }
     }
     return self;
+}
+
+- (KKTile *)createTileWithType:(KKTileType)type {
+    KKTile *tile = nil;
+    switch (type) {
+        case KKTileTypeCoin:
+            tile = [KKTile tileWithType:type];
+            break;
+        case KKTileTypeEnemy:
+            tile = [KKTile tileWithType:type];
+            break;
+        case KKTileTypePotion:
+            tile = [KKTile tileWithType:type];
+            break;
+        case KKTileTypeShield:
+            tile = [KKTile tileWithType:type];
+            break;
+        case KKTileTypeSword:
+            tile = [KKTile tileWithType:type];
+            break;
+        case TileTypeType_MAX:
+            NSAssert(NO, @"このTileTypeは実装されてません");
+            break;
+    }
+    return tile;
 }
 
 - (BOOL)canTouchTile:(KKTile *)tile {
