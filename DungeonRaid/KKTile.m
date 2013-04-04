@@ -12,6 +12,11 @@
 
 }
 
++ (id)tile {
+    NSAssert(NO, @"各Tileクラスでoverrideして使って下さい。");
+    return [[[self alloc] init] autorelease];
+}
+
 + (id)tileWithType:(KKTileType)type {
     return [[[self alloc] initWithType:type] autorelease];
 }

@@ -18,6 +18,8 @@ typedef enum {
 
 @interface KKTile : CCSprite
 
++ (id)tile;
+
 + (id)tileWithType:(KKTileType)type;
 
 - (id)initWithType:(KKTileType)type;
