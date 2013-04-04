@@ -18,7 +18,9 @@
 - (id)initWithType:(KKTileType)type {
     self = [super initWithType:type];
     if (self) {
-
+        self.attack = 1;
+        self.defence = 0;
+        self.health = 4;
     }
 
     return self;
