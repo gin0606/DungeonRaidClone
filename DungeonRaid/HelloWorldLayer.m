@@ -40,7 +40,7 @@
 
         for (int i = 0; i < TILE_NUM_X; i++) {
             for (int j = 0; j < TILE_NUM_Y; j++) {
-                KKTileType type = (int) (CCRANDOM_0_1() * 1000) % TileTypeType_MAX;
+                KKTileType type = (KKTileType) ((int) (CCRANDOM_0_1() * 1000) % TileTypeType_MAX);
                 KKTile *t = [KKTile tileWithType:type];
                 t.massX = i;
                 t.massY = j;
@@ -122,7 +122,7 @@
     for (int i = 0; i < TILE_NUM_X; i++) {
         for (int j = 0; j < TILE_NUM_Y; j++) {
             if (!mass[i][j]) {
-                KKTileType type = (int) (CCRANDOM_0_1() * 1000) % TileTypeType_MAX;
+                KKTileType type = (KKTileType) ((int) (CCRANDOM_0_1() * 1000) % TileTypeType_MAX);
                 KKTile *t = [KKTile tileWithType:type];
                 t.massX = i;
                 t.massY = j;
