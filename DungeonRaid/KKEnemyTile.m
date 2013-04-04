@@ -11,4 +11,17 @@
 @implementation KKEnemyTile {
 
 }
++ (id)tile {
+    return [[[self alloc] initWithType:KKTileTypeEnemy] autorelease];
+}
+
+- (id)initWithType:(KKTileType)type {
+    self = [super initWithType:type];
+    if (self) {
+
+    }
+
+    return self;
+}
+
 @end
