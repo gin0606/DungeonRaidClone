@@ -8,12 +8,12 @@
 #import <Foundation/Foundation.h>
 
 typedef enum {
-    KKCoinTile,
-    KKEnemyTile,
-    KKPotionTile,
-    KKShieldTile,
-    KKSwordTile,
-    TileType_MAX,
+    KKTileTypeCoin,
+    KKTileTypeEnemy,
+    KKTileTypePotion,
+    KKTileTypeShield,
+    KKTileTypeSword,
+    TileTypeType_MAX,
 } KKTileType;
 
 @interface KKTile : CCSprite

@@ -36,11 +36,11 @@
     if ((self = [super init])) {
         self.isTouchEnabled = YES;
         self.touchTiles = [CCArray array];
-        self.touchedTileType = TileType_MAX;
+        self.touchedTileType = TileTypeType_MAX;
 
         for (int i = 0; i < TILE_NUM_X; i++) {
             for (int j = 0; j < TILE_NUM_Y; j++) {
-                KKTileType type = (int) (CCRANDOM_0_1() * 1000) % TileType_MAX;
+                KKTileType type = (int) (CCRANDOM_0_1() * 1000) % TileTypeType_MAX;
                 KKTile *t = [KKTile tileWithType:type];
                 t.massX = i;
                 t.massY = j;
@@ -53,8 +53,8 @@
 }
 
 - (BOOL)canTouchTile:(KKTile *)tile {
-    if (self.touchedTileType == KKEnemyTile || self.touchedTileType == KKSwordTile) {
-        return tile.type == KKEnemyTile || tile.type == KKSwordTile;
+    if (self.touchedTileType == KKTileTypeEnemy || self.touchedTileType == KKTileTypeSword) {
+        return tile.type == KKTileTypeEnemy || tile.type == KKTileTypeSword;
     } else {
         return self.touchedTileType == tile.type;
     }
@@ -100,7 +100,7 @@
         [self removeChild:tile cleanup:YES];
     }
     [self.touchTiles removeAllObjects];
-    self.touchedTileType = TileType_MAX;
+    self.touchedTileType = TileTypeType_MAX;
 
     for (int i = 0; i < TILE_NUM_X; i++) {
         for (int j = 0; j < TILE_NUM_Y; j++) {
@@ -122,7 +122,7 @@
     for (int i = 0; i < TILE_NUM_X; i++) {
         for (int j = 0; j < TILE_NUM_Y; j++) {
             if (!mass[i][j]) {
-                KKTileType type = (int) (CCRANDOM_0_1() * 1000) % TileType_MAX;
+                KKTileType type = (int) (CCRANDOM_0_1() * 1000) % TileTypeType_MAX;
                 KKTile *t = [KKTile tileWithType:type];
                 t.massX = i;
                 t.massY = j;
