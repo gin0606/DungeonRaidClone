@@ -25,6 +25,7 @@
 		ACC1D139598342A7F8148B9F /* CGPointExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = ACC1D759362337575B32EF69 /* CGPointExtension.m */; };
 		ACC1D156E1763588426292C1 /* CCTexture2D.m in Sources */ = {isa = PBXBuildFile; fileRef = ACC1D55C2B0BD4214ABB5BA5 /* CCTexture2D.m */; };
 		ACC1D161F01A0AA505D9F9CB /* CCActionPageTurn3D.m in Sources */ = {isa = PBXBuildFile; fileRef = ACC1DC480E11379A10408467 /* CCActionPageTurn3D.m */; };
+		ACC1D1BB8FB087998F083D87 /* KKEnemyTile.m in Sources */ = {isa = PBXBuildFile; fileRef = ACC1D3DB5C534E4C6892FB2A /* KKEnemyTile.m */; };
 		ACC1D2811F9C703B185A84A1 /* CCActionTween.m in Sources */ = {isa = PBXBuildFile; fileRef = ACC1DD574AC756EF3BDD937D /* CCActionTween.m */; };
 		ACC1D298C350E1738EAF07BA /* neon_matrix_impl.c in Sources */ = {isa = PBXBuildFile; fileRef = ACC1D76301FFCA0AB353E984 /* neon_matrix_impl.c */; };
 		ACC1D2A95BB1E99B83CAFBC9 /* CCTexturePVR.m in Sources */ = {isa = PBXBuildFile; fileRef = ACC1D0B487437C6CCF403F17 /* CCTexturePVR.m */; };
@@ -219,6 +220,7 @@
 		ACC1D3AA3734A45983089AE9 /* CCFileUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CCFileUtils.m; path = libs/cocos2d/Support/CCFileUtils.m; sourceTree = "<group>"; };
 		ACC1D3CBF03CF48BF2413B66 /* IntroLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IntroLayer.h; sourceTree = "<group>"; };
 		ACC1D3D56590A74E32C0922F /* CCAction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CCAction.h; path = libs/cocos2d/CCAction.h; sourceTree = "<group>"; };
+		ACC1D3DB5C534E4C6892FB2A /* KKEnemyTile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKEnemyTile.m; sourceTree = "<group>"; };
 		ACC1D3ED4DDAB070FF100559 /* CMakeLists.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = CMakeLists.txt; path = libs/kazmath/src/CMakeLists.txt; sourceTree = "<group>"; };
 		ACC1D3FE11CAEDFBCD13FE19 /* CCGLProgram.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CCGLProgram.m; path = libs/cocos2d/CCGLProgram.m; sourceTree = "<group>"; };
 		ACC1D4057C0308187DCE53A2 /* CCGLView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CCGLView.m; path = libs/cocos2d/Platforms/Mac/CCGLView.m; sourceTree = "<group>"; };
@@ -251,6 +253,7 @@
 		ACC1D5AA5E0CAA8CCCFF262E /* CCTransition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CCTransition.h; path = libs/cocos2d/CCTransition.h; sourceTree = "<group>"; };
 		ACC1D5AF1023750876EF2F27 /* mat4.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = mat4.c; path = libs/kazmath/src/mat4.c; sourceTree = "<group>"; };
 		ACC1D5CF8720A6591CA52D49 /* CCFileUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CCFileUtils.h; path = libs/cocos2d/Support/CCFileUtils.h; sourceTree = "<group>"; };
+		ACC1D5FDD58DEE5BDBB11D57 /* KKEnemyTile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKEnemyTile.h; sourceTree = "<group>"; };
 		ACC1D604C6A463678C2E1455 /* PuzzleLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PuzzleLayer.m; sourceTree = "<group>"; };
 		ACC1D617CFF871DDD523A978 /* CCLabelAtlas.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CCLabelAtlas.h; path = libs/cocos2d/CCLabelAtlas.h; sourceTree = "<group>"; };
 		ACC1D633F40EDB0B70499316 /* SimpleAudioEngine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SimpleAudioEngine.h; path = libs/CocosDenshion/SimpleAudioEngine.h; sourceTree = "<group>"; };
@@ -730,6 +733,8 @@
 				ACC1D0F89179EEBC8DDD371A /* PuzzleLayer.h */,
 				ACC1D4F9E083DE6DEC478321 /* KKTile.m */,
 				ACC1DE28ED078CD6BBDFECC1 /* KKTile.h */,
+				ACC1D3DB5C534E4C6892FB2A /* KKEnemyTile.m */,
+				ACC1D5FDD58DEE5BDBB11D57 /* KKEnemyTile.h */,
 			);
 			path = DungeonRaid;
 			sourceTree = "<group>";
@@ -1046,6 +1051,7 @@
 				ACC1D66D51CD253377CCC463 /* IntroLayer.m in Sources */,
 				ACC1DC6433823AE5F84BF1B6 /* PuzzleLayer.m in Sources */,
 				ACC1D9745CDEA2AEB06E31F9 /* KKTile.m in Sources */,
+				ACC1D1BB8FB087998F083D87 /* KKEnemyTile.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
