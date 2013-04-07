@@ -9,7 +9,7 @@
 #import "KKTile.h"
 
 
-@interface KKEnemyTile : KKTile 
+@interface KKEnemyTile : KKTile
 @property(nonatomic) NSInteger attack;
 @property(nonatomic) NSInteger defence;
 @property(nonatomic) NSInteger health;
