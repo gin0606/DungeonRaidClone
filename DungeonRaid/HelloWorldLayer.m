@@ -18,7 +18,7 @@
     KKTile *mass[TILE_NUM_X][TILE_NUM_Y];
 }
 @property(nonatomic, retain) CCArray *touchTiles;
-@property(nonatomic) KKTileType touchedTileType;
+@property(nonatomic, retain) KKTile *touchedTile;
 
 @end
 
@@ -36,7 +36,6 @@
     if ((self = [super init])) {
         self.isTouchEnabled = YES;
         self.touchTiles = [CCArray array];
-        self.touchedTileType = TileTypeType_MAX;
 
         for (int i = 0; i < TILE_NUM_X; i++) {
             for (int j = 0; j < TILE_NUM_Y; j++) {
@@ -78,10 +77,10 @@
 }
 
 - (BOOL)canTouchTile:(KKTile *)tile {
-    if (self.touchedTileType == KKTileTypeEnemy || self.touchedTileType == KKTileTypeSword) {
+    if (self.touchedTile.type == KKTileTypeEnemy || self.touchedTile.type == KKTileTypeSword) {
         return tile.type == KKTileTypeEnemy || tile.type == KKTileTypeSword;
     } else {
-        return self.touchedTileType == tile.type;
+        return self.touchedTile.type == tile.type;
     }
 }
 
@@ -94,7 +93,7 @@
             KKTile *tile = mass[i][j];
             if (CGRectContainsPoint([tile boundingBox], touchPos)) {
                 tile.opacity = 128;
-                self.touchedTileType = tile.type;
+                self.touchedTile = tile;
                 [self.touchTiles addObject:tile];
                 return;
             }
@@ -125,7 +124,7 @@
         [self removeChild:tile cleanup:YES];
     }
     [self.touchTiles removeAllObjects];
-    self.touchedTileType = TileTypeType_MAX;
+    self.touchedTile = nil;
 
     for (int i = 0; i < TILE_NUM_X; i++) {
         for (int j = 0; j < TILE_NUM_Y; j++) {
