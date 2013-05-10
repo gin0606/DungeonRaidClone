@@ -119,9 +119,10 @@
 }
 
 - (void)ccTouchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
-    for (KKTile *tile in self.touchTiles) {
-        mass[tile.massX][tile.massY] = nil;
-        [self removeChild:tile cleanup:YES];
+    KKTile *tt = nil;
+    CCARRAY_FOREACH (self.touchTiles, tt) {
+        mass[tt.massX][tt.massY] = nil;
+        [self removeChild:tt cleanup:YES];
     }
     [self.touchTiles removeAllObjects];
     self.touchedTile = nil;
