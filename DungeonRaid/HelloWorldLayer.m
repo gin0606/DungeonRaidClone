@@ -130,9 +130,7 @@
         for (int j = 0; j < TILE_NUM_Y; j++) {
             if (mass[i][j]) {
                 int y;
-                for (y = 1; y < TILE_NUM_X && y <= j && !mass[i][j - y]; y++) {
-                    while (0) {/* 最適化で消されないように */}
-                }
+                for (y = 1; y < TILE_NUM_X && y <= j && !mass[i][j - y]; y++);
 
                 y--;
                 KKTile *tile = mass[i][j];
