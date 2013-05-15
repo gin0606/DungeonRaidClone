@@ -77,6 +77,13 @@
 }
 
 - (BOOL)canTouchTile:(KKTile *)tile {
+    // 直前にタッチした隣のTileしかタッチ出来ない
+    int massDiffX = self.touchedTile.massX - tile.massX;
+    int massDiffY = self.touchedTile.massY - tile.massY;
+    if (!(abs(massDiffX) <= 1 && abs(massDiffY) <= 1)) {
+        return NO;
+    }
+
     if (self.touchedTile.type == KKTileTypeEnemy || self.touchedTile.type == KKTileTypeSword) {
         return tile.type == KKTileTypeEnemy || tile.type == KKTileTypeSword;
     } else {
