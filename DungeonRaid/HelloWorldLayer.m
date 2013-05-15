@@ -108,8 +108,8 @@
     for (int i = 0; i < TILE_NUM_X; i++) {
         for (int j = 0; j < TILE_NUM_Y; j++) {
             KKTile *tile = mass[i][j];
-            if ([self canTouchTile:tile]
-                    && ccpFuzzyEqual(tile.position, touchPos, tile.contentSize.height / 3)) {
+            if (ccpFuzzyEqual(tile.position, touchPos, tile.contentSize.height / 3)
+                    && [self canTouchTile:tile]) {
                 tile.opacity = 128;
                 [self.touchTiles addObject:tile];
                 return;
