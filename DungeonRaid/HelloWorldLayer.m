@@ -111,6 +111,7 @@
             if (ccpFuzzyEqual(tile.position, touchPos, tile.contentSize.height / 3)
                     && [self canTouchTile:tile]) {
                 tile.opacity = 128;
+                self.touchedTile = tile;
                 [self.touchTiles addObject:tile];
                 return;
             }
